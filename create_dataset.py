@@ -29,16 +29,7 @@ for dir_ in os.listdir(DATA_DIR):
         results = hands.process(img_rgb)
         if results.multi_hand_landmarks:
             for hand_landmarks in results.multi_hand_landmarks: # extracting landmarks for all images
-                # mp_drawings.draw_landmarks(
-                #     img_rgb, # input
-                #     hand_landmarks, # output
-                #     mp_hands.HAND_CONNECTIONS,
-                #     mp_drawing_styles.get_default_hand_landmarks_style(),
-                #     mp_drawing_styles.get_default_hand_connections_style())
-#         plt.figure()
-#         plt.imshow(img_rgb)
-# plt.show()
-                for i in range(len(hand_landmarks.landmark)):
+             for i in range(len(hand_landmarks.landmark)):
                     x = hand_landmarks.landmark[i].x
                     y = hand_landmarks.landmark[i].y
 
